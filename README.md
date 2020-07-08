@@ -1,15 +1,15 @@
 ### Date created
-Include the date you created this project and README file.
+08/07/2020
 
 ### Project Title
-Replace the Project Title
+Bikeshare analysis project
 
 ### Description
-Describe what your project is about and what it does
+This project is intended to analyse the data from a period of a bikeshare company, showing to the user relevant analysis about different cities and periods of time
 
 ### Files used
-Include the files used
+bikeshare.py
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+@udacity for the dataset and the base
+@chewiebernardo for the code
