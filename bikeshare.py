@@ -86,22 +86,20 @@ def get_filters():
     # get user input for day of week (all, monday, tuesday, ... sunday)
     print('\r\nLast but not least, do you want to know about a specific day of the week?')
     while True:
-        day_inputed = input('Type the number related to your choice: 1-Monday, 2-Tuesday, 3-Wednesday, 4-Thursday, 5-Friday, 6-Saturday, 7-Sunday or 8-ALL\r\n')
-        try:
-            day = int(day_inputed)
-            if 1 <= day <= 8:
-                if day == 8:
-                    print('OK, everything it is.')
-                    day = None
-                else:
-                    print('OK, let me show you how {} went.'.format(days_of_week[day-1].title()))
-                break
-            else:
-                print('You need to type between those numbers.')
-        except ValueError:
-            print('You need to type the number, not the name.')
+        #Dictionay used only to switch from abbreviation to full name and get it's index
+        week_days_abbreviation = {'mon':('monday',1), 'tue':('tuesday',2), 'wed':('wednesday',3), 'thu':('thursday',4), 'fri':('friday',5), 'sat':('saturday',6), 'sun':('sunday',7)}
 
-        print('Sorry, I couldn\'t understand you.')
+        day = input('Choose the week day you want to know more information: Mon, Tue, Wed, Thu, Fri, Sat, Sun or All for everything\r\n').lower()
+        if day in week_days_abbreviation:
+            print('OK, let me show you how {} went.'.format(week_days_abbreviation[day][0].title()))
+            day = week_days_abbreviation[day][1]
+            break
+        elif day == 'all':
+            print('OK, everything it is.')
+            day = None
+        else:
+            print('You need to choose one of the days.')
+
 
     print('-'*40)
     return city, month, day
